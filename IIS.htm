@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IIS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+a:link{Color:Blue}
+</style>
+
+</head>
+<body>
+<div class="container">  
+	<h1>IIS Basics</h1>
+<br><strong>IIS Reset</strong><br>
+Restarting or stopping IIS, or rebooting your Web server, is a severe action. When you restart the Internet service, all sessions connected to your Web server (including Internet, FTP, SMTP, and NNTP) are dropped. Any data held in Web applications is lost. All Internet sites are unavailable until Internet services are restarted.
+
+<br><br><strong>Stopping and Starting App Pool</strong><br>
+By stopping an application pool, you are instructing all IIS worker processes serving this application pool to shut down, and prevent any additional worker processes from being started until the application pool is started again. <br>Starting an application pool enables IIS worker processes to be created to serve requests in that pool.
+<br><br><strong>App Pool Recycle</strong><br>
+Recycling an application pool causes all currently running IIS worker processes in that application pool to be gracefully shutdown, but unlike stopping the pool, new IIS worker processes can be started on demand to handle subsequent requests.
+
+<div class="container">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">App Pool Recycle Schedule</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+
+	Step 1: Open IIS <br>
+
+	Step 2: In the Connections pane, expand the server name, and then click Application Pools.<br>
+
+	Step 3: In the Application Pools pane, select the desired application pool. <br>
+
+	Step 4: In the Actions pane, click Recycling...
+
+</div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Recycle App Pool</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+
+	Step 1: Open IIS <br>
+
+	Step 2: In the Connections pane, expand the server name, and then click Application Pools.<br>
+
+	Step 3: In the Application Pools pane, select the desired application pool. <br>
+
+	Step 4: In the Actions pane, click Recycle 
+		
+
+	</div>
+      </div>
+    </div>
+
+   <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">IIS Logs</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+
+IIS log files are stored by default in the %SystemDrive%\inetpub\logs\LogFiles folder of your IIS server. Example: <strong>c:\inetpub\logs\LogFiles</strong>
+
+	</div>
+      </div>
+    </div>
+
+ <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Identify 64-bit App Pool</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+Step 1: Open command prompt <br>
+Step 2: Go to <b> c:\Windows\System32\inetsrv\ </b> <br>
+Step 3: Run the commnad <b>appcmd list apppool /enable32BitAppOnWin64:false</b> <br>
+	
+	</div>
+      </div>
+    </div>
+
+
+</body>
+</html>
+
